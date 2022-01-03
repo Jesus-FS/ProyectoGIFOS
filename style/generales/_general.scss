@@ -1,0 +1,142 @@
+$fontMontserrat: "Montserrat", sans-serif;
+$fontRoboto: "Roboto", sans-serif;
+$colorMorado: #572ee5;
+$colorMoradoTransparente: hsla(253, 78%, 54%, 0.9);
+$colorGrisBgDiurno: #f3f5f8;
+$coloGrisBgNocturno: #37383c;
+$coloNegroBgNocturno: #222326;
+$colorVerde: #50e3c2;
+$colorGrisActive: #9CAFC3;
+
+* {
+    box-sizing: border-box;
+    font-family: $fontMontserrat;
+    background-color: transparent;
+}
+
+//Lineas de color en header y pie
+.linea {
+    display: block;
+    width: 100vw;
+    height: 5px;
+}
+
+body {
+    margin: 0;
+
+    &.overflow-hidden {
+        overflow: hidden;
+    }
+}
+
+.modo-diurno {
+    background-color: white;
+    transition: background-color 0.5s;
+
+    .linea {
+        background-color: $colorMorado;
+    }
+
+    h1,
+    h2,
+    h3 {
+        color: $colorMorado;
+    }
+
+    strong {
+        color: $colorVerde;
+    }
+
+    p {
+        color: black;
+    }
+}
+
+.modo-nocturno {
+    background-color: $coloGrisBgNocturno;
+    transition: background-color 0.5s;
+
+    .linea {
+        background-color: black;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    strong {
+        color: white;
+    }
+}
+
+html {
+    font-size: 15px;
+}
+
+// Titulos de secciones
+.titulo-secciones {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 30px;
+
+    @include desktop {
+        font-size: 25px;
+    }
+}
+
+// CLase genera para esconder elementos
+.hide {
+    display: none;
+}
+
+// Seccion busqueda, favoritos y mis gifos Sin resultados
+.cnt-sin-resultados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 450px;
+
+    img {
+        width: 150px;
+        height: auto;
+    }
+
+    strong {
+        font-size: 22px;
+        line-height: 25px;
+        text-align: center;
+    }
+}
+
+// Estilos generales de secciones de resultados de busqueda, favoritos y mis gifos.
+.seccionesGifos {
+    width: 100vw;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 43px;
+
+    > img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    @include desktop {
+        margin-top: 80px;
+    }
+}
+
+//Boton ver mas gifos en todas las secciones
+#botonVerMasGifos {
+    // Boton Ver Mas Gifos
+    // .boton-verMasGifos{
+    display: block;
+    margin: 3.5rem auto 5rem auto ;
+    cursor: pointer;
+
+    &.hide {
+        display: none;
+    }
+    // }
+}
